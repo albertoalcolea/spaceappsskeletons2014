@@ -58,10 +58,7 @@ def get_details(item):
 		m = re.search(field + r'\s+=\s+([^<]+)', r.text)
 		if m is not None:
 			item[field] = m.group(1)
-	print '-------------------------------------'
-	for k, v in item.iteritems():
-		print '{0}: {1}'.format(k, v)
-	print '-------------------------------------'
+
 	# do_something_with_item
 
 
