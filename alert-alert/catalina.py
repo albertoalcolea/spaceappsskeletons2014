@@ -68,11 +68,12 @@ def get_entries():
 
 	links = soup.find_all('a')
 
-	# Ordena las entradas por fecha
+	# Sort entries by date
 	entries = [link.getText() for link in soup.find_all('a')]
 	entries.sort()
 
-	# La del dia actual da un 403. Obtenemos la del dia anterior
+	# The entry for the current day is not available (response 403)
+	# Look for the entries for the previos day
 	url = BASE_URL + entries[-2]
 
 	r = requests.get(url)
